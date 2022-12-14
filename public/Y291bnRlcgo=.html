@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <!-- Head Section -->
+    <title>Y291bnRlcgo=</title>
+
+    <script type="text/javascript">
+        function magicWord() {
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+                if (req.readyState == 4) {
+                    if (req.status == 200) {
+                        alert("Ok, I'm checking.... Gimme a moment");
+                    } else {
+                        alert("Who's you?! GO AWAY!");
+                    }
+                }
+            }
+            var magic_secret = "magic=" + document.getElementById("token").value;
+            req.open("POST", "/vrfyToken", true);
+            req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            req.send(magic_secret);
+        }
+    </script>
+</head>
+<body>
+    <!-- Body Section -->
+    <div class="row" style="text-align: center;">
+        <h4>What's this place???</h4>
+        <input type="password" id="token" name="token" placeholder="What's The Magic Word?">
+        <button autocomplete="off" id="magic" name="magic" onclick="magicWord()">Go!</button>
+    </div>
+</body>
